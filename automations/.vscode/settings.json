@@ -1,0 +1,5 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.formatting.provider": "black",
+    "python.pythonPath": "C:\\Users\\ShubhamPatni\\Anaconda3\\python.exe"
+}
