@@ -1,5 +1,7 @@
+# Logging.. you have different actions like login, user creation, document update, you can use decorator to log them all and no need to write the function again and again or rather than chaning code in different files wherever it is needed
 # closure : making a function inside a function allowing the inside function to by default inherit variables of outer function without passing them as parameter
 # as you can see below we are returning a function itself "inner_func" and storing it in a variable and now the variable itself can be called like a function
+from audioop import add
 from sys import displayhook
 
 
@@ -30,7 +32,7 @@ def divide(a,b):
 
 divide(a,b)
 
-# Logging
+# Logging.. you have different actions like login, user creation, document update, you can use decorator to log them all and no need to write the function again and again
 
 def my_logger(orig_func):
     import logging
@@ -47,3 +49,6 @@ def display_info(name,age):
     print('display_info ran with arguements ({}, {})'.format(name, age))
 
 display_info('Shubham', 24)
+
+
+
