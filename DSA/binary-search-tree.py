@@ -6,22 +6,22 @@ class bst:
 
     def traverse_pre(self):
         print(self.data, end=" ")
-        if self.left:
+        if self.left and self.left.data is not None:
             self.left.traverse_pre()
-        if self.right:
+        if self.right and self.right.data is not None:
             self.right.traverse_pre()
     
     def traverse_in(self):
-        if self.left:
+        if self.left and self.left.data is not None:
             self.left.traverse_in()
         print(self.data, end=" ")
-        if self.right:
+        if self.right and self.right.data is not None:
             self.right.traverse_in()
 
     def traverse_post(self):
-        if self.left:
+        if self.left and self.left.data is not None:
             self.left.traverse_post()
-        if self.right:
+        if self.right and self.right.data is not None:
             self.right.traverse_post()
         print(self.data, end=" ")
 
@@ -59,8 +59,27 @@ class bst:
 
     def delete(self, data):
         temp = data
-        if self.data==None:
-            print("tree is empty ")
+        other = 0
+        if temp < self.data:
+            if self.left:
+                self.left.delete(temp)
+        elif temp > self.data:
+            if self.right:
+                self.right.delete(temp)
+        elif temp == self.data:
+            if self.left is None and self.right is None:
+                self.data = None
+                return
+            if self.left is None:
+                temp1 = self.right
+                self.data = temp1.data
+                self.right = None
+                return 
+            if self.right is None:
+                temp1 = self.left
+                self.data = temp1.data
+                self.left = None 
+                return
 
 if __name__ == "__main__":
     bstt = bst(8)
@@ -79,6 +98,8 @@ if __name__ == "__main__":
     bstt.search_pre(1)
     bstt.insert_pre(1)
     bstt.search_pre(1)
+    bstt.delete(6)
+    bstt.traverse_pre()
 
 
     
