@@ -1,6 +1,7 @@
 import imp
 import numpy as np
 from scipy import stats
+from collections import Counter
 
 #MEAN - average of all numbers
 #Without Library/Function
@@ -45,6 +46,14 @@ v = max(Dict.values())
 for key, value in Dict.items():
          if v == value:
              print("Mode without using Mode function : ", key)
+
+#another method short
+Dict2 = Counter(array2)
+v = max(Dict2.values())
+for key, value in Dict2.items():
+         if v == value:
+             print("Mode without using Mode function : ", key)
+
 
 #With Library/Function
 mode2 = stats.mode(array2)
