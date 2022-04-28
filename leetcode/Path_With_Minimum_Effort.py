@@ -19,4 +19,8 @@ class Solution:
             for dx, dy in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
                 new_x, new_y = x + dx, y + dy
 
-                print(new_x,new_y)
+                if 0 <= new_x < m and 0 <= new_y < n and heights[new_x][new_y] != 0:
+                    new_diff = abs(heights[new_x][new_y] - curr_height)
+                    heappush(heap, (new_diff, new_x, new_y))
+        
+        return res
