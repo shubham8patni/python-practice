@@ -1,3 +1,4 @@
+from heapq import heappush, heappop
 class Solution:
     def minimumEffortPath(self, heights: List[List[int]]) -> int:
         m, n = len(heights), len(heights[0])
