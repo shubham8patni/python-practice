@@ -12,3 +12,11 @@ class Solution:
             
             if heights[x][y] == 0:
                 continue
+        
+            curr_height = heights[x][y]
+            heights[x][y] = 0
+            
+            for dx, dy in [(1, 0), (0, 1), (-1, 0), (0, -1)]:
+                new_x, new_y = x + dx, y + dy
+
+                print(new_x,new_y)
