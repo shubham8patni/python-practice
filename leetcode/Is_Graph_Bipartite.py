@@ -13,4 +13,6 @@ class Solution:
                     col[node] = color
                     for nx in graph[node]:
                         q.append((nx, color^1))
-                        print(q)
+                if col[node] != color:
+                    return False
+        return True
