@@ -7,4 +7,10 @@ class Solution:
                 continue
             q = deque()
             q.append((i,0))
-            print(q)
+            while q:
+                node,color = q.popleft()
+                if col[node] == -1:    
+                    col[node] = color
+                    for nx in graph[node]:
+                        q.append((nx, color^1))
+                        print(q)
