@@ -8,7 +8,15 @@ class Solution:
             
 
         def dfs(x,y,visited):
-            print(x,y,visited)
+            if x not in graph or y not in graph:
+                return -1
+            if y in graph[x]:
+                return graph[x][y]
+
+            for i in graph[x]:
+                if i not in visited:
+                    visited.add(i)
+                print(visited)
 
 
         output = []
