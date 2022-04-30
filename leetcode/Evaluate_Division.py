@@ -5,21 +5,23 @@ class Solution:
         for i in range(N):
             graph[equations[i][0]][equations[i][1]] = values[i]
             graph[equations[i][1]][equations[i][0]] = 1/values[i]
-            
-
+        
         def dfs(x,y,visited):
             if x not in graph or y not in graph:
                 return -1
             if y in graph[x]:
                 return graph[x][y]
-
+            
             for i in graph[x]:
                 if i not in visited:
                     visited.add(i)
-                print(visited)
-
-
+                    temp = dfs(i,y,visited)
+                    if temp == -1:
+                        continue
+                    else:
+                        return temp * graph[x][i]
+            return -1
         output = []
         for p,q in queries:
             output.append(dfs(p, q, set()))
-        
+        return output
