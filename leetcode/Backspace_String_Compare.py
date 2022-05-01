@@ -20,4 +20,4 @@ class Solution:
             else:
                 newT.append(i)
         
-        print(newT)
+        print(newS, newT)
