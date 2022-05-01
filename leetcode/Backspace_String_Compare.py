@@ -20,4 +20,7 @@ class Solution:
             else:
                 newT.append(i)
         
-        print(newS, newT)
+        if newS == newT:
+            return True
+        else:
+            return False
