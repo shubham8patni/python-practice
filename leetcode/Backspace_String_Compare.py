@@ -10,4 +10,14 @@ class Solution:
             else:
                 newS.append(i)
         
-        print(newS)
+        newT = []
+        for i in t:
+            if i == "#":
+                if len(newT)==0:
+                    pass
+                else:
+                    newT.pop()
+            else:
+                newT.append(i)
+        
+        print(newT)
