@@ -9,4 +9,6 @@ class Solution:
                 count+=1
             else:
                 counter[i] +=1
-            print(remain, count,counter)
+            #print(remain, count,counter)
+
+        return count
