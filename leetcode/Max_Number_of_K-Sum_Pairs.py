@@ -3,3 +3,5 @@ class Solution:
         counter = defaultdict(int)
             count = 0
             for i in nums:
+                remain = k - i
+                print(remain, count,counter)
