@@ -6,5 +6,10 @@ class Solution:
         if digits == "":
             return res
         
-    
+        
+        
+        if len(digits)==1:
+            res = dictn[digits]
+            return res
+        
                     
