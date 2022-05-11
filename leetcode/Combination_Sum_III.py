@@ -1,5 +1,5 @@
 class Solution:
-    def combinationSum3(self, k: int, n: int) -> List[List[int]]:
+    def combinationSum3(self, k: int, n: int):
         ans = []
 		
 		# s = start of iteration - to avoid repetitions
