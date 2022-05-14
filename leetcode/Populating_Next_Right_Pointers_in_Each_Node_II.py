@@ -11,7 +11,39 @@ class Solution:
         head = root  # save head to return
 
         def find_next(node):
-            return 0
+            if not node: 
+                return
+
+            if node.left:
+                if node.right:
+                    node.left.next = node.right
+                else:
+                    tmp = node.next
+                    while tmp:
+                        if tmp.left:
+                            node.left.next = tmp.left
+                            break
+                        elif tmp.right:
+                            node.left.next = tmp.right
+                            break
+                        else:
+                            tmp = tmp.next
+
+            if node.right:
+                tmp = node.next
+                while tmp:
+                    if tmp.left:
+                        node.right.next = tmp.left
+                        break
+                    elif tmp.right:
+                        node.right.next = tmp.right
+                        break
+                    else:
+                        tmp = tmp.next
+
+            # the recurse order of right before left is important
+            find_next(node.right)
+            find_next(node.left)
 
         find_next(root)
 
