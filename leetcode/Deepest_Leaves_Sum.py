@@ -9,7 +9,16 @@ class Solution:
         def dfs(root, level):
             if not root:
                 return 
-            
+            if not root.left and not root.right:
+                if level > self.max_level:
+                    self.max_level = level
+                    self.ans = root.val
+                elif level == self.max_level:
+                    self.ans += root.val      
+                return
+            dfs(root.left, level + 1)
+            dfs(root.right, level + 1)
+            return
         
         self.max_level, self.ans = -1, 0
         dfs(root , 0)
