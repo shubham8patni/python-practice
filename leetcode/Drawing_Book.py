@@ -17,21 +17,14 @@ import sys
 
 def pageCount(n, p):
     # Write your code here
-    if n%2==0:
-        if n-p < p:
-            ans = ((n-p-1)/2)+1
-        elif n-p > p:
-            ans = ((p-1)/2)+1
-        elif n-p == p:
-            ans = ((p-1)/2)+1
-    elif n%2!=0:
-        if n-p < p:
-            ans = ((n-p-1)/2)
-        elif n-p > p:
-            ans = ((p-1)/2)
-        elif n-p == p:
-            ans = ((p-1)/2)
-    return int(ans)
+    if n != p:
+        from_f = p//2
+        if p % 2==1:
+            from_b = (n-(p-1))//2
+        else:
+            from_b = (n-p)//2
+        return min(from_f,from_b)
+    return 0 
             
 
 if __name__ == '__main__':
@@ -46,3 +39,4 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+
